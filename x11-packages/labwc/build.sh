@@ -1,0 +1,9 @@
+TERMUX_PKG_HOMEPAGE="https://github.com/labwc/labwc"
+TERMUX_PKG_DESCRIPTION="A Wayland window-stacking compositor"
+TERMUX_PKG_LICENSE="GPL-2.0"
+TERMUX_PKG_MAINTAINER="xMeM <haooy@outlook.com>"
+TERMUX_PKG_VERSION=0.7.4
+TERMUX_PKG_SRCURL="https://github.com/labwc/labwc/archive/refs/tags/${TERMUX_PKG_VERSION}.tar.gz"
+TERMUX_PKG_SHA256=2afa1ef483863fc6217803a540b9afab6939d2324e9bb4dcf4a028281b731fb9
+TERMUX_PKG_DEPENDS="wlroots, libwayland, libxml2, libcairo, pango, glib, libpng, libxcb, librsvg, xwayland"
+TERMUX_PKG_BUILD_DEPENDS="libwayland-cross-scanner, libwayland-protocols"
