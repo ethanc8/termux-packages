@@ -12,13 +12,17 @@ TERMUX_PKG_EXTRA_CONFIGURE_ARGS="
 -Dexamples=false
 -Dxwayland=enabled
 -Dsession=disabled
--Dbackends=x11
--Drenderers=gles2
+-Dbackends=x11,termuxgui
+-Drenderers=gles2,vulkan
 "
+
+termux_step_post_get_source() {
+	cp -r $TERMUX_PKG_BUILDER_DIR/src/* $TERMUX_PKG_SRCDIR/
+}
 
 termux_step_pre_configure() {
 	export PATH="$TERMUX_PREFIX/opt/libwayland/cross/bin:$PATH"
 
 	# XXX: use alloca for shm_open
-	export CPPFLAGS+=" -Wno-alloca"
+	export CPPFLAGS+=" -Wno-alloca -Wno-strict-prototypes"
 }
