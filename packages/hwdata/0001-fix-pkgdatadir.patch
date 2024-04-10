@@ -1,0 +1,12 @@
+diff --git a/hwdata.pc.in b/hwdata.pc.in
+index c5791d3..6282b83 100644
+--- a/hwdata.pc.in
++++ b/hwdata.pc.in
+@@ -1,6 +1,6 @@
+ prefix=@prefix@
+ datadir=@datadir@
+-pkgdatadir=${pc_sysrootdir}@pkgdatadir@
++pkgdatadir=${prefix}/..@pkgdatadir@
+ 
+ Name: @NAME@
+ Description: Hardware identification and configuration data
