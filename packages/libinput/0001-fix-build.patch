@@ -1,0 +1,26 @@
+diff --git a/src/util-prop-parsers.c b/src/util-prop-parsers.c
+index 2fe1b1fb..3aa2a555 100644
+--- a/src/util-prop-parsers.c
++++ b/src/util-prop-parsers.c
+@@ -514,7 +514,7 @@ parse_evdev_abs_prop(const char *prop, struct input_absinfo *abs)
+ 	while (current && *current != '\0' && bit <= ABS_MASK_FLAT) {
+ 		if (*current != ':') {
+ 			int v;
+-			next = index(current, ':');
++			next = strchr(current, ':');
+ 			if (next)
+ 				*next = '\0';
+ 
+diff --git a/src/util-strings.c b/src/util-strings.c
+index 1f9b8a74..8aafd65b 100644
+--- a/src/util-strings.c
++++ b/src/util-strings.c
+@@ -246,7 +246,7 @@ trunkname(const char *filename)
+ 	if (base == NULL)
+ 		return safe_strdup("");
+ 
+-	suffix = rindex(base, '.');
++	suffix = strrchr(base, '.');
+ 	if (suffix == NULL)
+ 		return safe_strdup(base);
+ 	else
